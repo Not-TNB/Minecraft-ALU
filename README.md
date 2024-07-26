@@ -19,7 +19,7 @@ The construction will take place in multiple stages:
 **Note that a binary "1" is represented by an "on" redstone lamp, and a binary "0" by an "off" redstone lamp. Levers are attached to input lamps to allow player input**
 
 <img src=https://github.com/user-attachments/assets/65b08425-57b9-4dc4-89f0-1e0fef1aa1ce width="50%"> <br>
-> When the lever is flicked "down", the redstone lamp turns on, equivalent to a "1" in this document (right). Otherwise, it is a "0" (left).
+> When the lever is flicked down, the redstone lamp turns on, equivalent to a "1" (right). Otherwise, it is a "0" (left).
 
 <hr>
 
@@ -36,5 +36,5 @@ The designs for each logic gate are shown below. Note the following:
 - Each design is made to be 7 blocks long, 3 blocks wide and all wiring is done 1 block high.
 - Target blocks are used as they direct any redstone dust on its side towards them. This is useful as redstone wiring does not automatically direct to the side of other blocks.
 - Comparators set to subtract mode (the redstone torch on the tip being toggled on) produces the signal equivalent to what it receives from behind minus what it receives from its side.
-- When the block a redstone torch is attached to is powered, the redstone torch is deactivated. This allows for convenient signal inversion.
+- When the block a redstone torch is attached to is powered, the redstone torch is deactivated. This allows for convenient signal inversion. 
 
