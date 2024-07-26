@@ -32,7 +32,7 @@ The following shows my attempt at building the 7 mentioned logic gates:
 <img src=https://github.com/user-attachments/assets/3c8ab641-5ad8-4ef8-b2e7-81aff769b76f width="50%"> <br>
 > Output (2) = back input (12) - side input (10)
 
-The designs for each logic gate are shown below. Note the following:
+The designs for each logic gate is shown below. Note the following:
 - Each design is made to be 7 blocks long, 3 blocks wide and all wiring is done 1 block high.
 - Target blocks are used as they direct any redstone dust on its side towards them. This is useful as redstone wiring does not automatically direct to the side of other blocks.
 - Comparators set to subtract mode (the redstone torch on the tip being toggled on) produces the signal equivalent to what it receives from behind minus what it receives from its side.
