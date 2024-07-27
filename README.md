@@ -3,7 +3,7 @@
 It is assumed that the reader has knowledge of Minecraft redstone components, and that they are familiar with binary numbers and basic logic gates/circuitry. It is also assumed that the reader can read a truth-table.
 
 ## Introduction
-This file will document the building process of an 8-bit Arithmetic Logic Unit (ALU) in Minecraft. An ALU's job within a computer's processor is to perform arithmetic and bitwise operations on integer binary numbers. The inputs to an ALU are named "operands", which undergo a certain operation to be outputted by the ALU. The operation to be carried out is determined via an opcode (operation code) and a status code, which is outputted by the ALU to indicate the status of its previous operation. 
+This file will document the building process of a 8-bit Arithmetic Logic Unit (ALU) in Minecraft. An ALU's job within a computer's processor is to perform arithmetic and bitwise operations on integer binary numbers. The inputs to an ALU are named "operands", which undergo a certain operation to be outputted by the ALU. The operation to be carried out is determined via an opcode (operation code) and a status code, which is outputted by the ALU to indicate the status of its previous operation. 
 
 ![image](https://github.com/user-attachments/assets/b5c8bc6f-14ba-472d-bd83-e2ed2df0d1c2) <br>
 > Source: _en.wikipedia.org_; The inputs and outputs of an ALU.
@@ -33,7 +33,7 @@ The designs for each logic gate is shown below. Note the following:
 - Comparators set to subtract mode (the redstone torch on the tip being toggled on) produces the signal equivalent to what it receives from behind minus what it receives from its side.
 - When the block a redstone torch is attached to is powered, the redstone torch is deactivated. This allows for convenient signal inversion. 
 
-<img src=https://github.com/user-attachments/assets/c13b532d-47cd-4e51-b3c5-1eb38a76e3ff width="50%"> <br>
+<img src=https://github.com/user-attachments/assets/9c75c39d-84b0-4abd-8cff-6132b55ba251 width="50%"> <br>
 
 Truth tables are provided below for reference:
 
@@ -43,7 +43,10 @@ Truth tables are provided below for reference:
 <hr>
 
 ## Step 2: Adder
+The building of a multi-bit adder requires that of a half adder building up to a full adder.
 
+### Half Adder
+A half adder takes in 2 binary inputs $A$ and $B$ to output their sum $A+B$.
 <hr>
 
 ## Step 3: Subtractor
