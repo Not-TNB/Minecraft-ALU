@@ -16,11 +16,6 @@ The construction will take place in multiple stages:
 5. Arithmetic unit and Logic unit
 6. ALU
 
-**Note that a binary "1" is represented by an "on" redstone lamp, and a binary "0" by an "off" redstone lamp. Levers are attached to input lamps to allow player input**
-
-<img src=https://github.com/user-attachments/assets/65b08425-57b9-4dc4-89f0-1e0fef1aa1ce width="50%"> <br>
-> When the lever is flicked down, the redstone lamp turns on, equivalent to a "1" (right). Otherwise, it is a "0" (left).
-
 <hr>
 
 ## Step 1: The Logic Gates
@@ -38,9 +33,29 @@ The designs for each logic gate is shown below. Note the following:
 - Comparators set to subtract mode (the redstone torch on the tip being toggled on) produces the signal equivalent to what it receives from behind minus what it receives from its side.
 - When the block a redstone torch is attached to is powered, the redstone torch is deactivated. This allows for convenient signal inversion. 
 
-![LOGIC GATES](https://github.com/user-attachments/assets/c13b532d-47cd-4e51-b3c5-1eb38a76e3ff)<br>
+<img src=https://github.com/user-attachments/assets/c13b532d-47cd-4e51-b3c5-1eb38a76e3ff width="50%"> <br>
 
 Truth tables are provided below for reference:
 
-![U89H0](https://github.com/user-attachments/assets/46dda6fe-ac64-4efd-b68b-0a59cb3f4b8d)
+<img src=https://github.com/user-attachments/assets/46dda6fe-ac64-4efd-b68b-0a59cb3f4b8d width="50%"> <br>
 > Truth tables for the logic gates shown above. Note that "EX-OR" and "EX-NOR" in this chart is equivalent to "XOR" and "XNOR" respectively.
+
+<hr>
+
+## Step 2: Adder
+
+<hr>
+
+## Step 3: Subtractor
+
+<hr>
+
+## Step 4: Selector & Switch
+
+<hr>
+
+## Step 5: Arithmetic Unit & Logic Unit
+
+<hr>
+
+## FINAL RESULT: ALU
