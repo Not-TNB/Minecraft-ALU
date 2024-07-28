@@ -35,8 +35,6 @@ The designs for each logic gate is shown below. Note the following:
 
 <img src=https://github.com/user-attachments/assets/9c75c39d-84b0-4abd-8cff-6132b55ba251 width="50%"> <br>
 
-Truth tables are provided below for reference:
-
 <img src=https://github.com/user-attachments/assets/46dda6fe-ac64-4efd-b68b-0a59cb3f4b8d width="50%"> <br>
 > Truth tables for the logic gates shown above. Note that "EX-OR" and "EX-NOR" in this chart is equivalent to "XOR" and "XNOR" respectively.
 
@@ -46,7 +44,25 @@ Truth tables are provided below for reference:
 The building of a multi-bit adder requires that of a half adder building up to a full adder.
 
 ### Half Adder
-A half adder takes in 2 binary inputs $A$ and $B$ to output their sum $A+B$.
+A half adder takes in 2 binary inputs $A$ and $B$ to output their sum $A+B$ in 2 bits; the front, carry bit "C" and the lower, sum bit "S". The truth table for the half adder is as follows:
+
+| $A$ | $B$ | $A+B$ | $C$ | $S$ |
+| :-: | :-: | :---: | :-: | :-: |
+| 0   | 0   | 00    | 0   | 0   |
+| 0   | 1   | 01    | 0   | 1   |
+| 1   | 0   | 01    | 0   | 1   |
+| 1   | 1   | 10    | 1   | 0   |
+
+Notice that $C=A\wedge B$ and $S=A\oplus B$. From this, a half-adder in Minecraft is now within reach:
+
+<img src=https://github.com/user-attachments/assets/48bbfaf8-3931-40d5-a3b9-af5776680baa width="50%"> <br>
+
+This design can be heavily compressed as I have done below. A schematic is included:
+
+<img src=https://github.com/user-attachments/assets/6d3623dd-6381-42ac-ac3d-44e89ce2bf0a width="50%"> <br>
+
+<img src=https://github.com/user-attachments/assets/27761285-6ea5-48e8-834f-568c09679295 width="50%"> <br>
+
 <hr>
 
 ## Step 3: Subtractor
