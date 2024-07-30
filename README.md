@@ -24,7 +24,7 @@ The following shows my attempt at building the 7 mentioned logic gates:
 ![2024-07-26_23 53 44](https://github.com/user-attachments/assets/826ed97e-3ac6-4543-a759-2f7e9cc60787)
 > From left to right: NOT, AND, OR, XOR, NAND, NOR, XNOR. Blue indicates inputs and Orange indicates outputs.
 
-<img src=https://github.com/user-attachments/assets/3c8ab641-5ad8-4ef8-b2e7-81aff769b76f width="50%"> <br>
+<img src=https://github.com/user-attachments/assets/3c8ab641-5ad8-4ef8-b2e7-81aff769b76f width=50%> <br>
 > Output (2) = back input (12) - side input (10)
 
 The designs for each logic gate is shown below. Note the following:
@@ -33,9 +33,9 @@ The designs for each logic gate is shown below. Note the following:
 - Comparators set to subtract mode (the redstone torch on the tip being toggled on) produces the signal equivalent to what it receives from behind minus what it receives from its side.
 - When the block a redstone torch is attached to is powered, the redstone torch is deactivated. This allows for convenient signal inversion. 
 
-<img src=https://github.com/user-attachments/assets/9c75c39d-84b0-4abd-8cff-6132b55ba251 width="50%"> <br>
+<img src=https://github.com/user-attachments/assets/9c75c39d-84b0-4abd-8cff-6132b55ba251 width=50%> <br>
 
-<img src=https://github.com/user-attachments/assets/46dda6fe-ac64-4efd-b68b-0a59cb3f4b8d width="50%"> <br>
+<img src=https://github.com/user-attachments/assets/46dda6fe-ac64-4efd-b68b-0a59cb3f4b8d width=50%> <br>
 > Truth tables for the logic gates shown above. Note that "EX-OR" and "EX-NOR" in this chart is equivalent to "XOR" and "XNOR" respectively.
 
 <hr>
@@ -55,13 +55,36 @@ A half adder takes in 2 binary inputs $A$ and $B$ to output their sum $A+B$ in 2
 
 Notice that $C=A\wedge B$ and $S=A\oplus B$. From this, a half-adder in Minecraft is now within reach:
 
-<img src=https://github.com/user-attachments/assets/48bbfaf8-3931-40d5-a3b9-af5776680baa width="50%"> <br>
+<img src=https://github.com/user-attachments/assets/48bbfaf8-3931-40d5-a3b9-af5776680baa width=50%> <br>
 
 This design can be heavily compressed as I have done below. A schematic is included:
 
-<img src=https://github.com/user-attachments/assets/6d3623dd-6381-42ac-ac3d-44e89ce2bf0a width="50%"> <br>
+<img src=https://github.com/user-attachments/assets/6d3623dd-6381-42ac-ac3d-44e89ce2bf0a width=50%> <br>
 
-<img src=https://github.com/user-attachments/assets/1a9f877b-e541-42c2-b730-fbfc24701465 width="50%"> <br>
+<img src=https://github.com/user-attachments/assets/1a9f877b-e541-42c2-b730-fbfc24701465 width=50%> <br>
+
+### Full Adder
+
+A full adder adds 3 bits; $A$, $B$ and $C_{in}$ to form a 2-bit output $C_{out}$ and $S$. It is based on chaining 2 half-adders (and an OR gate to form $C_{out}$):
+
+<img src=https://github.com/user-attachments/assets/e141ad7f-ec06-4801-b822-5942a39922e3 width=50%> <br>
+
+A truth table, build picture and build schematic are provided below:
+
+| $A$ | $B$ | $C_{in}$ | $A+B+C_{in}$ | $C_{out}$ | $S$ |
+| :-: | :-: | :------: | :----------: | :-------: | :-: |
+| 0   | 0   | 0        | 00           | 0         | 0   |
+| 0   | 0   | 1        | 01           | 0         | 1   |
+| 0   | 1   | 0        | 01           | 0         | 1   |
+| 0   | 1   | 1        | 10           | 1         | 0   |
+| 1   | 0   | 0        | 01           | 0         | 1   |
+| 1   | 0   | 1        | 10           | 1         | 0   |
+| 1   | 1   | 0        | 10           | 1         | 0   |
+| 1   | 1   | 1        | 11           | 1         | 1   |
+
+<img src=https://github.com/user-attachments/assets/35ef9c65-8eb7-452e-bfa3-0f670b2a41f0 width=50%> <br>
+
+<img src=https://github.com/user-attachments/assets/ba3191a8-aad7-4689-9d15-cd7d1c0cf1a6 width=75%> <br>
 
 <hr>
 
