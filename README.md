@@ -61,7 +61,7 @@ This design can be heavily compressed as I have done below. A schematic is inclu
 
 <img src=https://github.com/user-attachments/assets/6d3623dd-6381-42ac-ac3d-44e89ce2bf0a width="50%"> <br>
 
-<img src=https://github.com/user-attachments/assets/27761285-6ea5-48e8-834f-568c09679295 width="50%"> <br>
+<img src=https://github.com/user-attachments/assets/b892a8e7-e1bc-4794-9b35-46e2cbe82121 width="50%"> <br>
 
 <hr>
 
