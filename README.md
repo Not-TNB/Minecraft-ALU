@@ -44,7 +44,7 @@ The designs for each logic gate is shown below. Note the following:
 The building of a multi-bit adder requires that of a half adder building up to a full adder.
 
 ### Half Adder
-A half adder takes in 2 binary inputs $A$ and $B$ to output their sum $A+B$ in 2 bits; the front, carry bit "C" and the lower, sum bit "S". The truth table for the half adder is as follows:
+A half adder takes in 2 binary inputs $A$ and $B$ to output their sum $A+B$ in 2 bits; the front, carry bit $C$ and the lower, sum bit $S$. The truth table for the half adder is as follows:
 
 | $A$ | $B$ | $A+B$ | $C$ | $S$ |
 | :-: | :-: | :---: | :-: | :-: |
