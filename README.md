@@ -85,6 +85,7 @@ A truth table, build picture and build schematic are provided below:
 <img src=https://github.com/user-attachments/assets/35ef9c65-8eb7-452e-bfa3-0f670b2a41f0 width=50%> <br>
 
 <img src=https://github.com/user-attachments/assets/3d7e9143-dae3-4c2c-8048-fe7326f02637 width=75%> <br>
+> Note that the stray redstone wire going off the $S$ bit will serve the function of lighting output lamps in the full-adder.
 
 <hr>
 
