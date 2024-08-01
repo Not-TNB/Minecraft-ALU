@@ -98,7 +98,7 @@ _____________
   1 0 1 1 0 1 <-- Sum bits
 ```
 
-As illustrated, carry bits are called as such because they account for the carrying done to the next digit, while sum bits are left unchanged to contribute to the output sum. As one may notice, these carry bits may cause a chain of subsequent carries, hence why building an adder out of this method is called "ripple-carry". As shown below, propagation continues in each consecutive digit as long as the sum of the 2 digit bits $A$ and $B$ and the previous carry bit $C_in$ is 1 or less.
+As illustrated, carry bits are called as such because they account for the carrying done to the next digit, while sum bits are left unchanged to contribute to the output sum. As one may notice, these carry bits may cause a chain of subsequent carries, hence why building an adder out of this method is called "ripple-carry". As shown below, propagation continues in each consecutive digit as long as the sum of the 2 digit bits $A$ and $B$ and the previous carry bit $C_{in}$ is 1 or less.
 
 ```
 Assume we are adding a large number, and we are on the Nth digit of A and B, A(n) and B(n).
