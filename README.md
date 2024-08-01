@@ -84,10 +84,50 @@ A truth table, build picture and build schematic are provided below:
 
 <img src=https://github.com/user-attachments/assets/35ef9c65-8eb7-452e-bfa3-0f670b2a41f0 width=50%> <br>
 
-<img src=https://github.com/user-attachments/assets/3d7e9143-dae3-4c2c-8048-fe7326f02637 width=75%> <br>
-> Note that the stray redstone wire going off above the $S$ bit will serve the function of lighting output lamps in the multi-bit adder
+<img src=https://github.com/user-attachments/assets/36fe8e3c-2c5a-420d-acc2-9038acf811b9 width=75%> <br>
 
-### Multi-bit Adder
+### Multi-bit Adder (Ripple Carry)
+
+Imagine adding the binary numbers $A=11111$ and $B=10010$:
+
+```
+  1 1 1 1 0 0 <-- Carry bits
+    0 1 1 1 1 <-- A4,A3,A2,A1,A0
++   1 0 1 1 0 <-- B4,B3,B2,B1,B0
+_____________
+  1 0 1 1 0 1 <-- Sum bits
+```
+
+As illustrated, carry bits are called as such because they account for the carrying done to the next digit, while sum bits are left unchanged to contribute to the output sum. As one may notice, these carry bits may cause a chain of subsequent carries, hence why building an adder out of this method is called "ripple-carry". As shown below, propagation continues in each consecutive digit as long as the sum of the 2 digit bits $A$ and $B$ and the previous carry bit $C_in$ is 1 or less.
+
+```
+Assume we are adding a large number, and we are on the Nth digit of A and B, A(n) and B(n).
+For notation, let the Nth carry bit be C(n). (NOTE: We count from 0 here.)
+
+        1   <-- Carry bit C(n) is 1 as A(n) + B(n) 1+1=10 cannot be stored in 1 bit
+    0 1 1 1 ...
++   0 1 0 1 ...
+___________ ...
+          0 
+
+      1 1   <-- Carry bit C(n+1) is propagated as either A(n+1) or B(n+1) is 1, hence A(n+1) + B(n+1) + C(n) = 10 > 1
+    0 1 1 1 ...
++   0 1 0 1 ...
+___________ ...
+        0 0 ...
+
+    1 1 1   <-- Carry bit is propagated as either A(n+2) or B(n+2) is 1, hence A(n+2) + B(n+2) + C(n+1) = 11 > 1
+    0 1 1 1 ...
++   0 1 0 1 ...
+___________ ...
+      1 0 0 ...
+
+  0 1 1 1   <-- Carry bit is NOT propagated as neither A(n+3) nor B(n+3) is 1, hence A(n+3) + B(n+3) + C(n+2) = 1 <= 1
+    0 1 1 1 ...
++   0 1 0 1 ...
+___________ ...
+    1 1 0 0 ...
+```
 
 <hr>
 
