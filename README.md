@@ -1,4 +1,4 @@
-# Minecraft ALU (CAS)
+# Minecraft ALU (CANCELLED CAS)
 ## Prerequisites
 It is assumed that the reader has knowledge of Minecraft redstone components, and that they are familiar with binary numbers and basic logic gates/circuitry. It is also assumed that the reader can read a truth-table.
 
