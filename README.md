@@ -129,10 +129,12 @@ ___________ ...
     1 1 0 0 ...
 ```
 
-From this, a schematic for a multi-bit adder is within reach. Below shows a 4-bit adder, but an 8-bit adder will be constructed in the Minecraft schematic
+From this, a schematic for a multi-bit adder is within reach. First we build a 4-bit adder; note that we do not have a lever for carry bits as they are predetermined from the previous digit (or defaulted to 0 for the ones digit).
 
 <img src=https://github.com/user-attachments/assets/515351bf-1087-444d-a115-59af623fc35e width=50%> <br>
 > Source: _www.electronicshub.org_; The logic diagram for a 4-bit adder, which is expandable for any number of bits to add.
+
+<img src="https://github.com/user-attachments/assets/dce41517-cea9-433e-9c78-0fdd0ae46a8f" width=100%> <br>
 
 <hr>
 
