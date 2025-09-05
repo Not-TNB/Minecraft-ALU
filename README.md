@@ -165,7 +165,7 @@ With this schematic (and some visual modifications to make the build more appeal
 <hr>
 
 ## Step 4: Incrementing & Negation
-In tackling subtraction (Step 4), instead of the approach we took for the adder (that is, building a half subtractor and a full subtractor then modularizing into a multi-bit subtractor), we can take advantage of the 8-bit adder built in the previous section. Observe that we can write $A-B=A+(-B)$, so building a circuit to perform the negation operation $A \mapsto (-A)$ in two's complement would allow us to achieve subtraction with less circuitry and greater time/space efficiency.
+In tackling subtraction (discussed in Step 5), instead of the approach we took for the adder (that is, building a half subtractor and a full subtractor then modularizing into a multi-bit subtractor), we can take advantage of the 8-bit adder built in the previous section. Observe that we can write $A-B=A+(-B)$, so building a circuit to perform the negation operation $A \mapsto (-A)$ in two's complement would allow us to achieve subtraction with less circuitry and greater time/space efficiency.
 
 ### About Negation
 In two's complement theory we have $(-A)= 1 + (\neg A)$, where $\neg A$ is the one's complement of $A$ (that is, flipping every bit in $A$, which can be done easily with NOT gates). Adding 1 is precisely the function of the increment operation. Hence it is reasonable to tackle the increment circuit first.
