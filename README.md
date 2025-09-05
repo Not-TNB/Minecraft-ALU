@@ -8,18 +8,19 @@ This file will document the building process of a 8-bit Arithmetic Unit (AU) in 
 ![image](https://github.com/user-attachments/assets/b5c8bc6f-14ba-472d-bd83-e2ed2df0d1c2) <br>
 > Source: _en.wikipedia.org_; The inputs and outputs of an ALU. The desired AU will work similarly but will only be able to perform basic operations.
 
-My goal for the AU is to have it be able to perform and output the results of the following operations on two signed 8-bit inputs, the operation done controlled by a 3-bit opcode input:
+My goal for the AU is to have it be able to perform and output the results of the following operations on two signed 8-bit inputs, the operation done controlled by a 2-bit opcode input:
 1. Addition (with carry)
 2. Subtraction (with carry/borrow)
-3. Negation (two's complement)
-4. Incrementing
-5. Decrementing
-Additionally it should produce the following outpuuts:
-1. Carry-out (the carry from addition, the borrow from subtraction or the overflow bit from shifting)
-2. Zero (whether all bits in the output are 0)
-3. Negative (whether the output is negative)
-4. Overflow (whether the output exceeds the 8-bit range)
-5. Parity (whether the number of 1 bits in the output is even or odd)
+3. Incrementing
+4. Decrementing
+
+Additionally it should produce the following outputs:
+1. Integer result $Y$
+2. Carry-out $C_{out}$ (the carry from addition, the borrow from subtraction or the overflow bit from shifting)
+3. Zero $Z$ (whether all bits in the output are 0)
+4. Negative $N$ (whether the output is negative)
+5. Overflow $O_f$ (whether the output exceeds the 8-bit range)
+6. Parity $P$ (whether the number of 1 bits in the output is even or odd)
 
 <hr>
 
@@ -45,8 +46,24 @@ The designs for each logic gate is shown below. Note the following:
 
 <hr>
 
-## Step 2: Addition
-The building of a multi-bit adder requires that of a half adder building up to a full adder.
+## Step 2: Input/Output Board
+Let the integer operands be $A$ and $B$, and let the opcode be $O_p$. Then the desired AU is a map $(A,B,O_p) \mapsto (Y,C_{out},Z,N,O_f,P)$. A table showing how the three inputs correspond to $Y$ is shown.
+
+| $O_p$ |  $Y$  |
+| :-:   | :---: |
+| 000   | $A+B$ |
+| 001   | $A+1$ |
+| 010   | $A-B$ |
+| 011   | $A-1$ |
+
+I created a placeholder input and output board as seen below.
+
+<img src="https://github.com/user-attachments/assets/09d112fd-bde4-4e77-bd99-831fc4547607" width=70%> <br>
+
+<hr>
+
+## Step 3: Addition
+The building of a multi-bit adder requires that of a half adder building up to a full adder, of which multiple can be chained together to add larger binary inputs.
 
 ### Half Adder
 A half adder takes in 2 binary inputs $A$ and $B$ to output their sum $A+B$ in 2 bits; the front, carry bit $C$ and the lower, sum bit $S$. The truth table for the half adder is as follows:
@@ -147,19 +164,29 @@ With this schematic (and some visual modifications to make the build more appeal
 
 <hr>
 
-## Step 3: Subtraction & Negation
+## Step 4: Incrementing & Negation
+In tackling subtraction (Step 4), instead of the approach we took for the adder (that is, building a half subtractor and a full subtractor then modularizing into a multi-bit subtractor), we can take advantage of the 8-bit adder built in the previous section. Observe that we can write $A-B=A+(-B)$, so building a circuit to perform the negation operation $A \mapsto (-A)$ in two's complement would allow us to achieve subtraction with less circuitry and greater time/space efficiency.
+
+### About Negation
+In two's complement theory we have $(-A)= 1 + (\neg A)$, where $\neg A$ is the one's complement of $A$ (that is, flipping every bit in $A$, which can be done easily with NOT gates). Adding 1 is precisely the function of the increment operation. Hence it is reasonable to tackle the increment circuit first.
+
+### Deriving Incrementing from Addition
+Vacuously, incrementing $A$ is the same as $A+1$, so we can use our multi-bit adder with $B=0$ and $C_0=1$ to increment $A$. To achieve this in Minecraft, we modify the original multi-bit adder by removing all the inputs in one column (equivalent to $B=0$ since no input signal is given) and replacing the $C_0$ input with a redstone block (equivalent to $C_0=1$ as the redstone block always produces a signal). The changes made are shown in the incrementer build below.
+
+<img src="https://github.com/user-attachments/assets/37ba3375-a7fd-4d37-bed6-d65c83c5ce77" width=30%> <br>
+> In this specific example, $A=00110101_2$ and the desired output $A+1=00110110$ is correctly displayed on the side.
 
 <hr>
 
-## Step 4: Incrementing & Decrementing
+## Step 5: Subtraction & Decrementing
 
 <hr>
 
-## Step 5: Opcodes & Operation Selection
+## Step 6: Opcodes & Operation Selection
 
 <hr>
 
-## Step 6: Output Signals
+## Step 7: Output Signals
 
 <hr>
 
