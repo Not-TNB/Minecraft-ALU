@@ -110,7 +110,7 @@ A truth table, build picture and build schematic are provided below:
 
 ### Multi-bit Adder (Ripple Carry)
 
-Imagine adding the binary numbers $A=11111$ and $B=10010$:
+Consider adding the binary numbers $A=11111$ and $B=10010$:
 
 ```
   1 1 1 1 0 0 <-- Carry bits
@@ -174,7 +174,7 @@ In two's complement theory we have $(-A)= 1 + (\neg A)$, where $\neg A$ is the o
 Vacuously, incrementing $A$ is the same as $A+1$, so we can use our multi-bit adder with $B=0$ and $C_0=1$ to increment $A$. To achieve this in Minecraft, we modify the original multi-bit adder by removing all the inputs in one column (equivalent to $B=0$ since no input signal is given) and replacing the $C_0$ input with a redstone block (equivalent to $C_0=1$ as the redstone block always produces a signal). The changes made are shown in the incrementer build below.
 
 <img src="https://github.com/user-attachments/assets/37ba3375-a7fd-4d37-bed6-d65c83c5ce77" width=30%> <br>
-> In this specific example, $A=00110101_2$ and the desired output $A+1=00110110$ is correctly displayed on the side.
+> In this specific example, $A=00110101$ and the desired output $A+1=00110110$ is correctly displayed on the side.
 
 <hr>
 
