@@ -1,20 +1,25 @@
-# Minecraft ALU
+# Minecraft Arithmetic Unit
 ## Prerequisites
 It is assumed that the reader has knowledge of Minecraft redstone components, and that they are familiar with binary numbers and basic logic gates/circuitry. It is also assumed that the reader can read a truth-table.
 
 ## Introduction
-This file will document the building process of a 8-bit Arithmetic Logic Unit (ALU) in Minecraft. An ALU's job within a computer's processor is to perform arithmetic and bitwise operations on integer binary numbers. The inputs to an ALU are named "operands", which undergo a certain operation to be outputted by the ALU. The operation to be carried out is determined via an opcode (operation code) and a status code, which is outputted by the ALU to indicate the status of its previous operation. 
+This file will document the building process of a 8-bit Arithmetic Unit (AU) in Minecraft, which performs the arithmetic operations requested within the processing done in an Arithmetic Logic Unit (ALU) within a CPU with Von-Neumann architecture. An ALU's job within the CPU is to perform arithmetic and bitwise operations on integer binary numbers. The inputs to an ALU are integer operands which undergo a certain operation to be outputted by the ALU. The operation to be carried out is determined via an opcode (operation code) and a status code, which is outputted by the ALU to indicate the status of its previous operation. 
 
 ![image](https://github.com/user-attachments/assets/b5c8bc6f-14ba-472d-bd83-e2ed2df0d1c2) <br>
-> Source: _en.wikipedia.org_; The inputs and outputs of an ALU.
+> Source: _en.wikipedia.org_; The inputs and outputs of an ALU. The desired AU will work similarly but will only be able to perform basic operations.
 
-The construction will take place in multiple stages:
-1. The logic gates (NOT, AND, NAND, OR, NOR, XOR, XNOR)
-2. 8-bit adder
-3. 8-bit subtractor with use of two's complement
-4. Selector and switch components to control/select input and output channels
-5. Arithmetic unit and Logic unit
-6. ALU
+My goal for the AU is to have it be able to perform and output the results of the following operations on two signed 8-bit inputs, the operation done controlled by a 3-bit opcode input:
+1. Addition (with carry)
+2. Subtraction (with carry/borrow)
+3. Negation (two's complement)
+4. Incrementing
+5. Decrementing
+Additionally it should produce the following outpuuts:
+1. Carry-out (the carry from addition, the borrow from subtraction or the overflow bit from shifting)
+2. Zero (whether all bits in the output are 0)
+3. Negative (whether the output is negative)
+4. Overflow (whether the output exceeds the 8-bit range)
+5. Parity (whether the number of 1 bits in the output is even or odd)
 
 <hr>
 
@@ -40,7 +45,7 @@ The designs for each logic gate is shown below. Note the following:
 
 <hr>
 
-## Step 2: Adder
+## Step 2: Addition
 The building of a multi-bit adder requires that of a half adder building up to a full adder.
 
 ### Half Adder
@@ -138,20 +143,24 @@ From this, a schematic for a multi-bit adder is within reach. Note that we do no
 
 With this schematic (and some visual modifications to make the build more appealing), the finished 8-bit adder is shown below.
 
-<img src="https://github.com/user-attachments/assets/1edd80f3-b7f8-43ba-bdfa-f3673489de92" width=70%>
+<img src="https://github.com/user-attachments/assets/54548501-6750-4e97-abae-accfa2e2ba58" width=70%> <br>
 
 <hr>
 
-## Step 3: Subtractor
+## Step 3: Subtraction & Negation
 
 <hr>
 
-## Step 4: Selector & Switch
+## Step 4: Incrementing & Decrementing
 
 <hr>
 
-## Step 5: Arithmetic Unit & Logic Unit
+## Step 5: Opcodes & Operation Selection
 
 <hr>
 
-## FINAL RESULT: ALU
+## Step 6: Output Signals
+
+<hr>
+
+## FINAL RESULT: Arithmetic Unit
