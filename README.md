@@ -176,6 +176,14 @@ Vacuously, incrementing $A$ is the same as $A+1$, so we can use our multi-bit ad
 <img src="https://github.com/user-attachments/assets/37ba3375-a7fd-4d37-bed6-d65c83c5ce77" width=30%> <br>
 > In this specific example, $A=00110101$ and the desired output $A+1=00110110$ is correctly displayed on the side.
 
+### Constructing the Negator
+We will build off of the incrementer circuit from above. We first replace the manual input (redstone lamps) in the incrementer and add NOT gates to each one. We can then build another manual input panel in front. As mentioned previously, the added NOT gates effectively performs $A\mapsto (\neg A)$, and followed by the increment operation this completes the negator. A side-view schematic of the modifications performed is shown.
+
+<img src="https://github.com/user-attachments/assets/3c4fa0e2-47f8-4210-856e-3cf078ca659a" width=40%> <br>
+> The black blocks are black concrete.
+
+<img src="https://github.com/user-attachments/assets/48098804-33ff-48cb-bf33-0f82115fbe46" width=70%> <br>
+> The negator build. The side-view shows how each individual bit of $A$ is flipped with a NOT gate to produce $\neg A$ before passing through the incrementer to yield $1+(\neg A)=(-A)$
 <hr>
 
 ## Step 5: Subtraction & Decrementing
