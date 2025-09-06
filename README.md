@@ -190,6 +190,11 @@ We will build off of the incrementer circuit from above. We first replace the ma
 
 ## Step 5: Subtraction & Decrementing
 
+### Multi-bit Subtractor
+Recall that the idea is to expand $A-B=A+(-B)$. In the Minecraft equivalent, we wire $B$ to the negator circuit to output $-B$, then combine this with $A$ as inputs to the 8-bit adder to produce $A-B$. The wiring for one layer (the ones bit) is shown below.
+
+<img src="https://github.com/user-attachments/assets/acbd7548-81ca-4b73-9c01-dc097a4145d0" width=50%> <br>
+
 <hr>
 
 ## Step 6: Opcodes & Operation Selection
