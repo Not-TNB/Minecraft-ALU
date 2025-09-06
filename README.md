@@ -18,9 +18,7 @@ Additionally it should produce the following outputs:
 1. Integer result $Y$
 2. Carry-out $C_{out}$ (the carry from addition, the borrow from subtraction or the overflow bit from shifting)
 3. Zero $Z$ (whether all bits in the output are 0)
-4. Negative $N$ (whether the output is negative)
-5. Overflow $O_f$ (whether the output exceeds the 8-bit range)
-6. Parity $P$ (whether the number of 1 bits in the output is even or odd)
+4. Parity $P$ (whether the number of 1 bits in the output is even or odd)
 
 <hr>
 
@@ -47,7 +45,7 @@ The designs for each logic gate is shown below. Note the following:
 <hr>
 
 ## Step 2: Input/Output Board
-Let the integer operands be $A$ and $B$, and let the opcode be $O_p$. Then the desired AU is a map $(A,B,O_p) \mapsto (Y,C_{out},Z,N,O_f,P)$. A table showing how the three inputs correspond to $Y$ is shown.
+Let the integer operands be $A$ and $B$, and let the opcode be $O_p$. Then the desired AU is a map $(A,B,O_p) \mapsto (Y,C_{out},Z,P)$. A table showing how the three inputs correspond to $Y$ is shown.
 
 | $O_p$ |  $Y$  |
 | :-:   | :---: |
@@ -58,7 +56,7 @@ Let the integer operands be $A$ and $B$, and let the opcode be $O_p$. Then the d
 
 I created a placeholder input and output board as seen below.
 
-<img src="https://github.com/user-attachments/assets/09d112fd-bde4-4e77-bd99-831fc4547607" width=70%> <br>
+<img src="https://github.com/user-attachments/assets/505b8cd6-f416-455b-ab82-56e83b3bf2a0" width=50%> <br>
 
 <hr>
 
