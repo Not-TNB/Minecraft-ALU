@@ -198,6 +198,15 @@ When wiring is completed, the subtractor is achieved.
 <img src="https://github.com/user-attachments/assets/60f2b195-41e1-48a6-885b-20c087975417" width=80%> <br>
 > In this example we have $A=10100001$ and $B=10111101$, which in two's complement form are equivalent to $A=-95 \wedge B=-67$ yielding $A-B=-28=11100100_2$. The benefit of allowing two's complement form is that all the adder and subtracter curcuits do not require additional logic for arithmetic with negatives, simplifying the build process compared to sign-bit representation.
 
+### Decrementer
+Vacuously decrementing $A$ is the same as $A-1$. However instead of directly using our subtractor we can note the following:
+```math
+ A-1 = A+(-1) = A+[11111111]_2 \qquad (\text{-1 in 8-bit two's complement form is 00000001})
+```
+So we can use a single adder module (setting $B=11111111$ and $C_0=0$) to emulate decrementing. This is done in the build below by modifying the adder to remov e the $C_0$ input and replacing the $B$ input signals with redstone blocks.
+
+<img src="https://github.com/user-attachments/assets/3365c39e-ec81-452f-95ee-67774bdf4bbd" width=30%> <br>
+
 <hr>
 
 ## Step 6: Opcodes & Operation Selection
