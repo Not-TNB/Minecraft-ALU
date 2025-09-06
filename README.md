@@ -153,10 +153,12 @@ ___________ ...
 
 From this, a schematic for a multi-bit adder is within reach. Note that we do not have a lever for carry bits as they are predetermined from the previous digit. In typical applications the carry bit at the bottom will also be set to 0.
 
+Also, I found that in the full adder design I made there was a chance that the output would periodically toggle on/off instead of staying on, which could pose a problem for reading these outputs. I found that this was due to a redstone clock loop which could be induced within the OR gate, so I introduced a comparator in non-subtractor (normal) mode to fix this.
+
 <img src=https://github.com/user-attachments/assets/515351bf-1087-444d-a115-59af623fc35e width=50%> <br>
 > Source: _www.electronicshub.org_; The logic diagram for a 4-bit adder, which is expandable for any number of bits to add.
 
-<img src="https://github.com/user-attachments/assets/dce41517-cea9-433e-9c78-0fdd0ae46a8f" width=100%> <br>
+<img src="https://github.com/user-attachments/assets/7078f53d-1e25-4f5d-b9ef-c8edaaf76688" width=70%> <br>
 
 With this schematic (and some visual modifications to make the build more appealing), the finished 8-bit adder is shown below.
 
@@ -182,7 +184,7 @@ We will build off of the incrementer circuit from above. We first replace the ma
 <img src="https://github.com/user-attachments/assets/3c4fa0e2-47f8-4210-856e-3cf078ca659a" width=40%> <br>
 > The black blocks are black concrete.
 
-<img src="https://github.com/user-attachments/assets/48098804-33ff-48cb-bf33-0f82115fbe46" width=70%> <br>
+<img src="https://github.com/user-attachments/assets/b062c282-7ceb-425a-be9c-bc4ce891d225" width=70%> <br>
 > The negator build. The side-view shows how each individual bit of $A$ is flipped with a NOT gate to produce $\neg A$ before passing through the incrementer to yield $1+(\neg A)=(-A)$
 <hr>
 
