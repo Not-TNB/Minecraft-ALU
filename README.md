@@ -8,7 +8,7 @@ This file will document the building process of a 8-bit Arithmetic Unit (AU) in 
 ![image](https://github.com/user-attachments/assets/b5c8bc6f-14ba-472d-bd83-e2ed2df0d1c2) <br>
 > Source: _en.wikipedia.org_; The inputs and outputs of an ALU. The desired AU will work similarly but will only be able to perform basic operations.
 
-My goal for the AU is to have it be able to perform and output the results of the following operations on two signed 8-bit inputs, the operation done controlled by a 2-bit opcode input:
+My goal for the AU is to have it be able to perform and output the results of the following operations on two signed 8-bit inputs (in two's complement form), the operation done controlled by a 2-bit opcode input:
 1. Addition (with carry)
 2. Subtraction (with carry/borrow)
 3. Incrementing
@@ -25,7 +25,7 @@ Additionally it should produce the following outputs:
 <hr>
 
 ## Step 1: The Logic Gates
-The following shows my attempt at building the 7 mentioned logic gates:
+The following shows my attempt at building the 7 major logic gates:
 
 ![2024-07-26_23 53 44](https://github.com/user-attachments/assets/826ed97e-3ac6-4543-a759-2f7e9cc60787)
 > From left to right: NOT, AND, OR, XOR, NAND, NOR, XNOR. Blue indicates inputs and Orange indicates outputs.
@@ -193,7 +193,12 @@ We will build off of the incrementer circuit from above. We first replace the ma
 ### Multi-bit Subtractor
 Recall that the idea is to expand $A-B=A+(-B)$. In the Minecraft equivalent, we wire $B$ to the negator circuit to output $-B$, then combine this with $A$ as inputs to the 8-bit adder to produce $A-B$. The wiring for one layer (the ones bit) is shown below.
 
-<img src="https://github.com/user-attachments/assets/acbd7548-81ca-4b73-9c01-dc097a4145d0" width=50%> <br>
+<img src="https://github.com/user-attachments/assets/7f6cb9e6-49ef-49d3-9565-06b43c4a8f9a" width=50%> <br>
+
+When wiring is completed, the subtractor is achieved.
+
+<img src="https://github.com/user-attachments/assets/60f2b195-41e1-48a6-885b-20c087975417" width=80%> <br>
+> In this example we have $A=10100001$ and $B=10111101$, which in two's complement form are equivalent to $A=-95 \wedge B=-67$ yielding $A-B=-28=11100100_2$. The benefit of allowing two's complement form is that all the adder and subtracter curcuits do not require additional logic for arithmetic with negatives, simplifying the build process compared to sign-bit representation.
 
 <hr>
 
