@@ -203,7 +203,7 @@ Vacuously decrementing $A$ is the same as $A-1$. However instead of directly usi
 ```math
  A-1 = A+(-1) = A+[11111111]_2 \qquad (\text{-1 in 8-bit two's complement form is 00000001})
 ```
-So we can use a single adder module (setting $B=11111111$ and $C_0=0$) to emulate decrementing. This is done in the build below by modifying the adder to remov e the $C_0$ input and replacing the $B$ input signals with redstone blocks.
+So we can use a single adder module (setting $B=11111111$ and $C_0=0$) to emulate decrementing. This is done in the build below by modifying the adder to remove the $C_0$ input and replacing the $B$ input signals with redstone blocks.
 
 <img src="https://github.com/user-attachments/assets/3365c39e-ec81-452f-95ee-67774bdf4bbd" width=30%> <br>
 
