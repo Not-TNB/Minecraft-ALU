@@ -37,9 +37,10 @@ The designs for each logic gate is shown below. Note the following:
 - Comparators set to subtract mode (the redstone torch on the tip being toggled on) produces the signal equivalent to what it receives from behind minus what it receives from its side.
 - When the block a redstone torch is attached to is powered, the redstone torch is deactivated. This allows for convenient signal inversion. 
 
-<img src=https://github.com/user-attachments/assets/9c75c39d-84b0-4abd-8cff-6132b55ba251 width=50%> <br>
+<img src="https://github.com/user-attachments/assets/f2a5b200-3f4d-4033-a6a7-034e166d8b7e" width=50%> <br>
 
 <img src=https://github.com/user-attachments/assets/46dda6fe-ac64-4efd-b68b-0a59cb3f4b8d width=50%> <br>
+
 > Truth tables for the logic gates shown above. Note that "EX-OR" and "EX-NOR" in this chart is equivalent to "XOR" and "XNOR" respectively.
 
 <hr>
@@ -238,6 +239,11 @@ To implement this in Minecraft I decided to build the selector in 4 layers, each
 
 <img src="https://github.com/user-attachments/assets/44610fa8-05f8-45f7-93fa-950852127186" width=50%> <br>
 
+<img src="https://github.com/user-attachments/assets/da391b7d-09c2-4af0-87d2-15f57106dd6b" width=80%> <br>
+
+I included some pictures of the build interconnected with the input board (STEP 2):
+
+<img src="https://github.com/user-attachments/assets/2b609e1e-c5d5-49ad-8eb8-506c9c9726e3" width=60%> <br>
 
 ### Side-Note: The Redstone Torch Tower
 Notice how in the 3rd layer I seem to have built $\neg O_p[1] \wedge O_p[0]$ (similar to the second layer) rather than the expected $O_p[1] \wedge \neg O_p[0]$. This is due to the method I used in this build to transport redstone signals vertically, known as a redstone torch tower. This method works because redstone torches placed atop a block are able to influence the block above it, so chaining this mechanic leads to a column of redstone torches and solid blocks. 
@@ -253,6 +259,9 @@ O_p[1] \wedge \neg O_p[0] &= \left( \neg \neg O_p[1] \right) \wedge \left(\neg \
 \end{aligned}
 ```
 So we can repeat the circuit in layer 2 to for the building of layer 3.
+
+<img src="https://github.com/user-attachments/assets/1074ba15-6559-4539-b3fe-45043b358001" width=35%> <br>
+> Two examples of so-called "redstone torch towers", often used for the vertical transmission of redstone. Notice how if a redstone torch powers the block above it, the following torch is deactivated, leading to an alternating pattern (on, off, on, ...)
 
 <hr>
 
