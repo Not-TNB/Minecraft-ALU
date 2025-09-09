@@ -49,10 +49,10 @@ Let the integer operands be $A$ and $B$, and let the opcode be $O_p$. Then the d
 
 | $O_p$ |  $Y$  |
 | :-:   | :---: |
-| 000   | $A+B$ |
-| 001   | $A+1$ |
-| 010   | $A-B$ |
-| 011   | $A-1$ |
+| 00   | $A+B$ |
+| 01   | $A+1$ |
+| 10   | $A-B$ |
+| 11   | $A-1$ |
 
 I created a placeholder input and output board as seen below.
 
@@ -210,6 +210,31 @@ So we can use a single adder module (setting $B=11111111$ and $C_0=0$) to emulat
 <hr>
 
 ## Step 6: Opcodes & Operation Selection
+
+At this stage all four crucial modules have been built; the adder, the subtractor, the incrementer and the decrementer. Before we hook up these four circuits to our input board, we must first design a system which ensures the inputs $A$ and $B$ flow only to the correct module depending on the opcode input $O_p$. My idea was to have the inputs branch out into four lines, each line going to one of the four operation circuits. For each of the four lines, the signal will only pass through to the operation circuit if this happens to be the operation selected by $O_p$.
+
+### Interpreting Opcodes
+I first built a circuit which, given the two-bit input $O_p$, will output a 1 bit in exactly one of four output lines, each output line corresponding to a different operation which the opcode can specify. The desired truth table is given below:
+
+| $O_p[1]$ (Twos bit) | $O_p[0]$ (Ones bit) | Add | Sub | Inc | Dec |
+| :------------: | :------------: | :-: | :-: | :-: | :-: |
+| 0              | 0              | 1   | 0   | 0   | 0   |
+| 0              | 1              | 0   | 1   | 0   | 0   |
+| 1              | 0              | 0   | 0   | 1   | 0   |
+| 1              | 1              | 0   | 0   | 0   | 1   |
+
+From the truth table I deduced the following boolean logic expressions for $Add$, $Sub$, $Inc$ and $Dec$:
+
+```math
+\begin{aligned}
+Add &= \neg \left( O_p[1] \vee O_p[0] \right) &\qquad \text{( [1] NOR [0] )} \\
+Sub &= \neg O_p[1] \wedge O_p[0]                &\qquad \text{( NOT [1] AND [0] )} \\
+Inc &= O_p[1] \wedge \neg O_p[0]                &\qquad \text{( [1] AND NOT [0] )} \\
+Dec &= O_p[1] \wedge O_p[0]                     &\qquad \text{( [1] AND [0] )}
+\end{aligned}
+```
+
+
 
 <hr>
 
