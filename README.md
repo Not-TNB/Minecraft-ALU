@@ -234,7 +234,25 @@ Dec &= O_p[1] \wedge O_p[0]                     &\qquad \text{( [1] AND [0] )}
 \end{aligned}
 ```
 
+To implement this in Minecraft I decided to build the selector in 4 layers, each layer corresponding to one of the output signals. I also included a logic diagram to illustrate this
 
+<img src="https://github.com/user-attachments/assets/44610fa8-05f8-45f7-93fa-950852127186" width=50%> <br>
+
+
+### Side-Note: The Redstone Torch Tower
+Notice how in the 3rd layer I seem to have built $\neg O_p[1] \wedge O_p[0]$ (similar to the second layer) rather than the expected $O_p[1] \wedge \neg O_p[0]$. This is due to the method I used in this build to transport redstone signals vertically, known as a redstone torch tower. This method works because redstone torches placed atop a block are able to influence the block above it, so chaining this mechanic leads to a column of redstone torches and solid blocks. 
+
+Despite being extremely compact, one caveat of this method for vertical redstone trabsmission is that the activation of redstone torches alternate (since when a redstone torch receives an indirect redstone signal it toggles off), apparent in the third layer. 
+
+Hence, the inputs to the third layer are actually $X=\neg O_p[0]$ ad $Y=\neg O_p[1]$, so to obtain $O_p[1] \wedge \neg O_p[0]$ we observe that
+```math
+\begin{aligned}
+O_p[1] \wedge \neg O_p[0] &= \left( \neg \neg O_p[1] \right) \wedge \left(\neg \neg \neg O_p[0]\right) &\qquad \text{Justification: } P=\neg\neg P \\
+&= \neg \left( \neg O_p[1] \right) \wedge \left( \neg O_p[0] \right) \\
+&= \neg X \wedge Y
+\end{aligned}
+```
+So we can repeat the circuit in layer 2 to for the building of layer 3.
 
 <hr>
 
