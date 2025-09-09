@@ -263,6 +263,13 @@ So we can repeat the circuit in layer 2 to for the building of layer 3.
 <img src="https://github.com/user-attachments/assets/1074ba15-6559-4539-b3fe-45043b358001" width=35%> <br>
 > Two examples of so-called "redstone torch towers", often used for the vertical transmission of redstone. Notice how if a redstone torch powers the block above it, the following torch is deactivated, leading to an alternating pattern (on, off, on, ...)
 
+### Input Operands
+I first built redstone lines going out of each of the 16 input bits. The following image shows how I connected the red (ones bit) lines to the adding circuit.
+
+<img src="https://github.com/user-attachments/assets/7d33f1a2-a37d-4d38-a075-d0d6f15a3b76" width=60%> <br>
+
+Repeating a similar process into the other three operational circuits and with all other bits, the AU so far looks as follows
+
 <hr>
 
 ## Step 7: Output Signals
