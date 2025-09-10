@@ -16,7 +16,7 @@ My goal for the AU is to have it be able to perform and output the results of th
 
 Additionally it should produce the following outputs:
 1. Integer result $Y$
-2. Carry-out $C_{out}$ (the carry from addition or the borrow from subtraction)
+2. Carry-out $C_{out}$ (the carry from addition or the borrow/overflow from subtraction)
 3. Zero $Z$ (whether all bits in the output are 0)
 4. Parity $P$ (whether the number of 1 bits in the output is even or odd)
 
