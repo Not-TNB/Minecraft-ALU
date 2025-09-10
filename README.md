@@ -239,7 +239,7 @@ To implement this in Minecraft I decided to build the selector in 4 layers, each
 
 <img src="https://github.com/user-attachments/assets/44610fa8-05f8-45f7-93fa-950852127186" width=50%> <br>
 
-<img src="https://github.com/user-attachments/assets/da391b7d-09c2-4af0-87d2-15f57106dd6b" width=80%> <br>
+<img src="https://github.com/user-attachments/assets/da391b7d-09c2-4af0-87d2-15f57106dd6b" width=90%> <br>
 
 I included some pictures of the build interconnected with the input board (STEP 2):
 
@@ -253,7 +253,7 @@ Despite being extremely compact, one caveat of this method for vertical redstone
 Hence, the inputs to the third layer are actually $X=\neg O_p[0]$ ad $Y=\neg O_p[1]$, so to obtain $O_p[1] \wedge \neg O_p[0]$ we observe that
 ```math
 \begin{aligned}
-O_p[1] \wedge \neg O_p[0] &= \left( \neg \neg O_p[1] \right) \wedge \left(\neg \neg \neg O_p[0]\right) &\qquad \text{Justification: } P=\neg\neg P \\
+O_p[1] \wedge \neg O_p[0] &= \left( \neg \neg O_p[1] \right) \wedge \left(\neg O_p[0]\right) &\qquad \text{Justification: } P=\neg\neg P \\
 &= \neg \left( \neg O_p[1] \right) \wedge \left( \neg O_p[0] \right) \\
 &= \neg X \wedge Y
 \end{aligned}
@@ -275,6 +275,18 @@ Repeating a similar process into the other three operational circuits and with a
 <hr>
 
 ## Step 7: Output Signals
+
+At this stage, inputting $A$ and $B$ will yield outputs in all four operational modules. The last step is hence to choose exactly one of these to output (with some additional output signals $C_{out}$, $Z$ and $P$) using the operation selector built previously.
+
+First I wired up the outputs of each of the operational modules to the lower right where I can deal with them.
+
+<img src="https://github.com/user-attachments/assets/03ed6a2b-64e0-4928-bc8b-4e757e496502" width=70%> <br>
+> NOTE that I actually swapped the positions of the incrementer and decrementer circuits since the previous screenshot. This is so the ordering of the outputs from left to right are exactly the order of outputs from the operation selector; this is an organizational/visual fix and does/will not affect functionality.
+
+To allow the opcode to control the line which is outputted, I built AND gates between each of the output lines and their corresponding selector line fcrom the operation selector. An example of how this is done is shown below, and I did a similar approach for the other bits and lines:
+
+<img src="https://github.com/user-attachments/assets/4a24c341-6e17-4ed4-bb18-41219f2a8149" width=70%> <br>
+
 
 <hr>
 
