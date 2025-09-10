@@ -210,7 +210,7 @@ So we can use a single adder module (setting $B=11111111$ and $C_0=0$) to emulat
 
 <hr>
 
-## Step 6: Opcodes & Operation Selection
+## Step 6: Operation Selection Module & Operation Circuit Wiring
 
 At this stage all four crucial modules have been built; the adder, the subtractor, the incrementer and the decrementer. Before we hook up these four circuits to our input board, we must first design a system which ensures the inputs $A$ and $B$ flow only to the correct module depending on the opcode input $O_p$. My idea was to have the inputs branch out into four lines, each line going to one of the four operation circuits. For each of the four lines, the signal will only pass through to the operation circuit if this happens to be the operation selected by $O_p$.
 
@@ -268,7 +268,9 @@ I first built redstone lines going out of each of the 16 input bits. The followi
 
 <img src="https://github.com/user-attachments/assets/7d33f1a2-a37d-4d38-a075-d0d6f15a3b76" width=60%> <br>
 
-Repeating a similar process into the other three operational circuits and with all other bits, the AU so far looks as follows
+Repeating a similar process into the other three operational circuits and with all other bits, the AU so far looks as follows:
+
+<img src="https://github.com/user-attachments/assets/0a6a73d5-c102-48d4-bbeb-2d549914ad76" width=70%> <br>
 
 <hr>
 
