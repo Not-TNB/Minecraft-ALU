@@ -287,6 +287,17 @@ To allow the opcode to control the line which is outputted, I built AND gates be
 
 <img src="https://github.com/user-attachments/assets/4a24c341-6e17-4ed4-bb18-41219f2a8149" width=70%> <br>
 
+After wiring up AND gates to all 8 bits for each respective operation circuit output lines, the following is obtained
+
+<img src="https://github.com/user-attachments/assets/8af80e94-8a99-465f-ab9d-f416e652fb7c" width=70%> <br>
+<img src="https://github.com/user-attachments/assets/d712057a-a034-4bd3-8687-6ca9f5e20f49" width=50%> <br>
+> The gray half-blocks are upper-slabs; stacking them this way and placing redstone atop each one is another method of vertical redstone transmission.
+
+I then connected the four output lines together to yield the output $Y$.
+
+<img src="https://github.com/user-attachments/assets/a27d95eb-d836-4c5b-8654-c7dac31584c8" width=60%> <br>
+
+### Interpreting $Y$ to Compute $C_{out}$, $Z$ and $P$
 
 <hr>
 
