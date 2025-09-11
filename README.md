@@ -324,12 +324,13 @@ When this is implemented the output interpreter build is completed:
 
 Lastly I just needed to hook up this component to the output $Y$, and build the proper connections to the output board. The build is finished.
 
-<img width="3229" height="1310" alt="final outputs" src="https://github.com/user-attachments/assets/ab5cd213-b63f-4843-9d2e-464072c8e58d" />
+<img src="https://github.com/user-attachments/assets/ab5cd213-b63f-4843-9d2e-464072c8e58d" width=80%> <br>
 
 <hr>
 
 ## FINAL RESULT: Arithmetic Unit
-The arithmetic unit is completed. Find additional images of the final build under [images](https://github.com/Not-TNB/Minecraft-Arithmetic-Unit/tree/main/images%20)
+The arithmetic unit is completed. Find additional images of the final build under [images](https://github.com/Not-TNB/Minecraft-Arithmetic-Unit/tree/main/images%20).
+
 <img src="https://github.com/user-attachments/assets/65c33c0b-3458-40b3-8d8c-e38107c72f1d" width=100%><br>
 > The input board is within the blue glass on the left, and the output board is within the orange glass on the right. I used glass here instead of solid blocks to showcase the wiring behind the boards.
 
