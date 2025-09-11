@@ -318,6 +318,14 @@ P &= \bigoplus_{i=0}^7Y[i] \\
 \end{aligned}
 ``` 
 
+When this is implemented the output interpreter build is completed:
+
+<img src="https://github.com/user-attachments/assets/6913a644-d338-43d0-b897-9705d412735b" width=70%> <br>
+
+Lastly I just needed to hook up this component to the output $Y$, and build the proper connections to the output board. The build is finished.
+
+<img width="3229" height="1310" alt="final outputs" src="https://github.com/user-attachments/assets/ab5cd213-b63f-4843-9d2e-464072c8e58d" />
+
 <hr>
 
 ## FINAL RESULT: Arithmetic Unit
