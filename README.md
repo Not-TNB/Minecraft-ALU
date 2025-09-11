@@ -334,4 +334,7 @@ The arithmetic unit is completed. Find additional images of the final build unde
 <img src="https://github.com/user-attachments/assets/65c33c0b-3458-40b3-8d8c-e38107c72f1d" width=100%><br>
 > The input board is within the blue glass on the left, and the output board is within the orange glass on the right. I used glass here instead of solid blocks to showcase the wiring behind the boards.
 
+<img src="https://github.com/user-attachments/assets/1106eceb-1c13-4cee-968e-1512d268c023" width=100%> <br>
+> A component/circuit breakdown of the finished AU.
+
 Overall, this project, although simple in nature (a subset of the ALU with limited function), challenged me to apply my knowledge of fundamental boolean logic and logic circuits in a unique, unconventional and restrictive environment (Minecraft redstone), allowing me to implement basic concepts like the full adder in interesting and original ways. This is further exacerbated by the fact that I strived to use no tutorials or guides within this niche field of redstone computing during the project.
