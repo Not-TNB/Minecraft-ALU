@@ -293,11 +293,30 @@ After wiring up AND gates to all 8 bits for each respective operation circuit ou
 <img src="https://github.com/user-attachments/assets/d712057a-a034-4bd3-8687-6ca9f5e20f49" width=50%> <br>
 > The gray half-blocks are upper-slabs; stacking them this way and placing redstone atop each one is another method of vertical redstone transmission.
 
-I then connected the four output lines together to yield the output $Y$.
+I then connected the four output lines together to yield the output $Y$ as well as $C_out$ at the top.
 
-<img src="https://github.com/user-attachments/assets/a27d95eb-d836-4c5b-8654-c7dac31584c8" width=60%> <br>
+<img src="https://github.com/user-attachments/assets/27d98261-c48e-42d6-97cd-c1510f58c26c" width=60%>
 
 ### Interpreting $Y$ to Compute $C_{out}$, $Z$ and $P$
+$Y$ and $C_{out}$ are already apparent and can be brought to the output board for display. It is left to compute $Z$ (which is 1 iff. $Y=0$) and $P$ (which is 1 iff. the number of 1 bits in $Y$ is odd). First we calculate $Z$:
+```math
+\begin{aligned}
+Z &= \bigwedge_{i=0}^7(\neg Y[i]) \\
+  &= \neg\left(\bigvee_{i=0}^7Y[i]\right) \qquad \text{By De-Morgan's law}
+\end{aligned}
+```
+Which can be implemented as follows
+
+<img src="https://github.com/user-attachments/assets/b03ad955-8770-40f5-818e-bd19426403e7" width=50%> <br>
+> The upper-slab technique for vertical redstone transmission connects all 8 bits of $Y$ creating an OR gate. A NOT gate with a redstone torch inverter is built at the top to produce $Z$.
+
+Now we calculate $P$. To do this, notice how $A\oplus B=1$ iff. the number of 1 bits among $A$ and $B$ is odd. Hence we can chain XOR gates along the bits of $Y$:
+```math
+\begin{aligned}
+P &= \bigoplus_{i=0}^7Y[i] \\
+&= \left[ \left( Y[0] \oplus Y[1] \right) \oplus \left( Y[2] \oplus Y[3] \right) \right] \bigoplus \left[ \left( Y[4] \oplus Y[5] \right) \oplus \left( Y[6] \oplus Y[7] \right) \right]  \qquad \text{XOR is associative}
+\end{aligned}
+``` 
 
 <hr>
 
