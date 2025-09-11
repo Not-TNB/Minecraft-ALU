@@ -1,4 +1,4 @@
-## PLEASE GO TO THE WIKI FOR DOCUMENTATION ON THE BUILD AND DESIGN PROCESS OF THE ARITHMETIC UNIT
+## PLEASE GO TO THE WIKI FOR [DOCUMENTATION ON THE BUILD AND DESIGN PROCESS OF THE ARITHMETIC UNIT](https://github.com/Not-TNB/Minecraft-Arithmetic-Unit/wiki/%5B0%5D-::-Introduction)
 
 The arithmetic unit build is able to perform the following operations with 8-bit binary represented integers and a 2-bit opcode (operation code):
 1. Addition
